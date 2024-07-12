@@ -1,5 +1,7 @@
 package uz.pdp.entity;
 
+import uz.pdp.enums.RoomStatus;
+
 import java.util.Date;
 
 public class Room {
@@ -7,15 +9,14 @@ public class Room {
     private int floor ;
     private int room ;
 
-    private Boolean status = false;
+    private RoomStatus statusRoom = RoomStatus.FREE;
 
     private Date from ;
     private Date to ;
 
-    public Room(int floor, int room, Boolean status) {
+    public Room(int floor, int room) {
         this.floor = floor;
         this.room = room;
-        this.status = status;
     }
 
     public int getFloor() {
@@ -34,12 +35,12 @@ public class Room {
         this.room = room;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public RoomStatus getStatusRoom() {
+        return statusRoom;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setStatusRoom(RoomStatus statusRoom) {
+        this.statusRoom = statusRoom;
     }
 
     public Date getFrom() {
@@ -57,5 +58,4 @@ public class Room {
     public void setTo(Date to) {
         this.to = to;
     }
-
 }

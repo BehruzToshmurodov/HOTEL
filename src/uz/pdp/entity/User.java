@@ -1,5 +1,7 @@
 package uz.pdp.entity;
 
+import uz.pdp.enums.UserStatus;
+
 import java.util.ArrayList;
 
 public class User {
@@ -7,7 +9,7 @@ public class User {
     private String name;
     private String phoneNumber;
 
-    private String UserLevel = "USER";
+    private UserStatus userStatus = UserStatus.USER;
 
     private ArrayList<Room> history;
 
@@ -40,13 +42,13 @@ public class User {
         this.history = history;
     }
 
-    public String getUserLevel() {
-        return UserLevel;
+    public UserStatus getUserStatus() {
+        return userStatus;
     }
 
-    public void setUserLevel(String userLevel) {
-        UserLevel = userLevel;
+    public void setUserStatus(UserStatus userStatus) {
+        this.userStatus = userStatus;
     }
- }
+}
 
 
