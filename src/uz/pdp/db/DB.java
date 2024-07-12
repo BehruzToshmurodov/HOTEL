@@ -1,17 +1,19 @@
 package uz.pdp.db;
 
+import uz.pdp.entity.Bookings;
 import uz.pdp.entity.Hotel;
 import uz.pdp.entity.Room;
 import uz.pdp.entity.User;
 import uz.pdp.enums.UserStatus;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public interface DB {
 
     Hotel HOTEL = new Hotel();
     ArrayList<User> USER_LIST = new ArrayList<>();
+
+    ArrayList<Bookings> BOOKS = new ArrayList<>();
 
 
 

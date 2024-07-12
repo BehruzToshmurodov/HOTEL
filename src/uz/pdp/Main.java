@@ -14,26 +14,29 @@ public class Main {
     }
     public static void main(String[] args) {
 
-        menuForAuth();
-        Integer entered_commend = Input.inputInt("enter commend");
-        switch (entered_commend){
-            case 1->{
-                AuthService.singIn();
-            }
-            case 2->{
-                AuthService.singUp();
-            }
-            case 0->{
+        while (true) {
 
+            menuForAuth();
+            Integer entered_commend = Input.inputInt("enter commend");
+            switch (entered_commend) {
+                case 1 -> {
+                    AuthService.singIn();
+                }
+                case 2 -> {
+                    AuthService.singUp();
+                }
+                case 0 -> {
+
+                }
             }
-        }
 
 
-        if ( AuthService.CURRENT_USER.getUserStatus().equals(UserStatus.USER) ){
-            UserService.start();
-        }
-        else if (AuthService.CURRENT_USER.getUserStatus().equals(UserStatus.ADMIN)){
-            AdminService.start();
+            if (AuthService.CURRENT_USER.getUserStatus().equals(UserStatus.USER)) {
+                UserService.start();
+            } else if (AuthService.CURRENT_USER.getUserStatus().equals(UserStatus.ADMIN)) {
+                AdminService.start();
+            }
+
         }
 
     }

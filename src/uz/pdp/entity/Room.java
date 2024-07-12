@@ -11,8 +11,9 @@ public class Room {
 
     private RoomStatus statusRoom = RoomStatus.FREE;
 
-    private Date from ;
-    private Date to ;
+    private int month ;
+    private int from ;
+    private int to ;
 
     public Room(int floor, int room) {
         this.floor = floor;
@@ -43,19 +44,27 @@ public class Room {
         this.statusRoom = statusRoom;
     }
 
-    public Date getFrom() {
+    public Integer getFrom() {
         return from;
     }
 
-    public void setFrom(Date from) {
+    public void setFrom(Integer from) {
         this.from = from;
     }
 
-    public Date getTo() {
+    public Integer getTo() {
         return to;
     }
 
-    public void setTo(Date to) {
+    public void setTo(Integer to) {
         this.to = to;
+    }
+
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
     }
 }

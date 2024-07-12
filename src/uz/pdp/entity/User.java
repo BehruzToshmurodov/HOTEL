@@ -3,9 +3,11 @@ package uz.pdp.entity;
 import uz.pdp.enums.UserStatus;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class User {
 
+    private final UUID uuid = UUID.randomUUID();
     private String name;
     private String phoneNumber;
 
@@ -48,6 +50,10 @@ public class User {
 
     public void setUserStatus(UserStatus userStatus) {
         this.userStatus = userStatus;
+    }
+
+    public UUID getUuid() {
+        return uuid;
     }
 }
 
