@@ -2,9 +2,10 @@ package uz.pdp.entity;
 
 import uz.pdp.enums.BookingStatus;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Bookings {
+public class Bookings implements Serializable {
 
     private UUID userId;
 

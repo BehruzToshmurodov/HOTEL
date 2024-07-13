@@ -10,6 +10,8 @@ import uz.pdp.util.Input;
 public class Main {
 
     static {
+        DB.loadBookings();
+        DB.loadUsers();
         DB.generateFunction();
     }
     public static void main(String[] args) {
@@ -36,6 +38,9 @@ public class Main {
             } else if (AuthService.CURRENT_USER.getUserStatus().equals(UserStatus.ADMIN)) {
                 AdminService.start();
             }
+
+            DB.upLoadBookings();
+            DB.upLoadUsers();
 
         }
 

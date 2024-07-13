@@ -2,10 +2,11 @@ package uz.pdp.entity;
 
 import uz.pdp.enums.UserStatus;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class User {
+public class User implements Serializable {
 
     private final UUID uuid = UUID.randomUUID();
     private String name;

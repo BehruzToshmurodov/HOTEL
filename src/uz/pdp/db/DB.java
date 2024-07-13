@@ -6,7 +6,9 @@ import uz.pdp.entity.Room;
 import uz.pdp.entity.User;
 import uz.pdp.enums.UserStatus;
 
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface DB {
 
@@ -59,5 +61,64 @@ public interface DB {
 
 
     }
+
+    static void loadBookings() {
+
+        try (
+                FileInputStream fileInputStream = new FileInputStream("dbForBookings.text" );
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)
+        ) {
+
+            BOOKS.addAll( (List<Bookings>) objectInputStream.readObject());
+
+        } catch (IOException | ClassNotFoundException e) {
+            //
+        }
+    }
+
+
+    static void upLoadBookings() {
+
+        try (
+                FileOutputStream fileOutputStream = new FileOutputStream("dbForBookings.text");
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)
+        ) {
+
+            objectOutputStream.writeObject( BOOKS);
+
+        } catch (IOException e) {
+            throw  new RuntimeException();
+        }
+    }
+
+    static void loadUsers() {
+
+        try (
+                FileInputStream fileInputStream = new FileInputStream("dbForUsers.text" );
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)
+        ) {
+
+            USER_LIST.addAll( (List<User>) objectInputStream.readObject());
+
+        } catch (IOException | ClassNotFoundException e) {
+            //
+        }
+    }
+
+
+    static void upLoadUsers() {
+
+        try (
+                FileOutputStream fileOutputStream = new FileOutputStream("dbForUsers.text");
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)
+        ) {
+
+            objectOutputStream.writeObject( USER_LIST);
+
+        } catch (IOException e) {
+            throw  new RuntimeException();
+        }
+    }
+
 
 }
